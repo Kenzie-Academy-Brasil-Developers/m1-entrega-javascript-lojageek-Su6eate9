@@ -1,6 +1,9 @@
 //LISTA DE FIGURE ACTIONS
-const secaoListFigure = document.getElementsByClassName('action-figures')[0]
-const secaoListPainting = document.getElementsByClassName('paintings')[0]
+const secaoListFigure   = document.querySelector('.action-figures')
+const secaoListPainting = document.querySelector('.paintings')
+
+const listPaintings     = document.querySelector('.list-paintings')
+const listActionFigures = document.querySelector('.list-action-figures')
 
 let listFigure = [
     {
@@ -39,30 +42,60 @@ let listPainting = [
     }
 ]
 
-//CRIAR ITENS DE AÇÃO
-function createActionItem(objeto) {
-    for(let i = 0; i < objeto.length; i++){
-        let elementoLista = document.createElement('li')
-        let nome = document.createElement('span')
-
-        nome.innerText = `${listPerson[i].nome}`
-        elementoLista.appendChild(nome)
-
-        secaoListFigure.appendChild(elementoLista)
-    }
-}
-createActionItem(listFigure)
-
 //CRIAR PINTURAS
 function createPaitingItem(objeto) {
     for(let i = 0; i < objeto.length; i++){
-        let elementoLista = document.createElement('li')
-        let nome = document.createElement('span')
+        const elementoLista = document.createElement('li')
 
-        nome.innerText = `${listPerson[i].nome}`
+        let img = document.createElement('img')
+            img.src = objeto[i].Imagem
+            img.alt = objeto[i].Nome
+        let nome = document.createElement('p')
+        let valor = document.createElement('span')
+
+        elementoLista.classList.add('card')
+
+        nome.innerText = `${objeto[i].Nome}`
+        valor.innerText = `${objeto[i].Valor}`
+
+        elementoLista.appendChild(img)
         elementoLista.appendChild(nome)
+        elementoLista.appendChild(valor)
 
-        secaoListPainting.appendChild(elementoLista)
+        listPaintings.appendChild(elementoLista)
+
     }
 }
 createPaitingItem(listPainting)
+
+//CRIAR ITENS DE AÇÃO
+function createActionItem(objeto) {
+    for(let i = 0; i < objeto.length; i++){
+        const elementoLista = document.createElement('li')
+
+        let img = document.createElement('img')
+            img.src = objeto[i].Imagem
+            img.alt = objeto[i].Nome
+        let nome = document.createElement('p')
+        let valor = document.createElement('span')
+
+        elementoLista.classList.add('card')
+
+        nome.innerText = `${objeto[i].Nome}`
+        valor.innerText = `${objeto[i].Valor}`
+
+        elementoLista.appendChild(img)
+        elementoLista.appendChild(nome)
+        elementoLista.appendChild(valor)
+
+        listActionFigures.appendChild(elementoLista)
+    }
+}
+createActionItem(listFigure)
+{/* 
+<li class="card">
+    <img src="./assets/painting/clock.jpg" alt="">
+    <p>Nome do Item</p>
+    <span>Valor do Item</span>
+</li>
+*/}
