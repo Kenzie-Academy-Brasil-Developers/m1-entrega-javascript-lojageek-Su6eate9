@@ -4,12 +4,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Roboto', sans-serif; 
 }
 
 body{
-    font-family: 'Roboto', sans-serif;   
+      background-color: rgb(236, 236, 236);
 }
-
 /* CABECALHO */
 header{
     display: flex;
@@ -22,13 +22,11 @@ header{
 
     min-width: 750px;
 }
-
 .botoes{
     display: flex;
     align-items: center;
     gap: 30px;
 }
-
 .botoes p{
     background-color: #0A99FE;
     color: #fff;
@@ -44,12 +42,10 @@ header{
     height: 40px;
     border-radius: 10px;
 }
-
 .botoes p:hover{
     background-color: rgba(10, 153, 254, 0.1);
     color: #0A99FE;
 }
-
 /* CONTEUDO PRINCIPAL */
 .conteudo{
     display: block;
@@ -58,13 +54,11 @@ header{
 
     min-width: 750px;
 }
-
 section{
     display: block;
     flex-direction: column;
     overflow-x: auto;
 }
-
 .categoria{
     border: none;
     font-weight: 500;
@@ -73,14 +67,12 @@ section{
     margin-top: 30px;
     margin-left: 30px;
 }
-
 ul{    
     margin: 20px 0 30px 30px;
     display: flex;
     flex-direction: row;
     gap: 30px;
 }
-
 .card{
     background-color: rgb(231, 231, 231);
     width: 207px;
@@ -94,7 +86,6 @@ ul{
 
     border-radius: 10px;
 }
-
 .card img{
     height: 60%;
 
@@ -103,14 +94,12 @@ ul{
 
     border-radius: 5px;
 }
-
 .card p{
     margin-bottom: 10px;
 
     font-size: 20px;
     font-weight: 500;
 }
-
 .card span{
     font-size: 16px;
     font-weight: 400;

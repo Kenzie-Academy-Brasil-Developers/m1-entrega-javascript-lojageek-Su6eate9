@@ -1,6 +1,6 @@
 //LISTA DE FIGURE ACTIONS
-let secaoListFigure = document.getElementsByClassName('action-figures')[0]
-let secaoListPainting = document.getElementsByClassName('paintings')[0]
+const secaoListFigure = document.getElementsByClassName('action-figures')[0]
+const secaoListPainting = document.getElementsByClassName('paintings')[0]
 
 let listFigure = [
     {
@@ -41,10 +41,28 @@ let listPainting = [
 
 //CRIAR ITENS DE AÇÃO
 function createActionItem(objeto) {
-    
+    for(let i = 0; i < objeto.length; i++){
+        let elementoLista = document.createElement('li')
+        let nome = document.createElement('span')
+
+        nome.innerText = `${listPerson[i].nome}`
+        elementoLista.appendChild(nome)
+
+        secaoListFigure.appendChild(elementoLista)
+    }
 }
+createActionItem(listFigure)
 
 //CRIAR PINTURAS
 function createPaitingItem(objeto) {
+    for(let i = 0; i < objeto.length; i++){
+        let elementoLista = document.createElement('li')
+        let nome = document.createElement('span')
 
+        nome.innerText = `${listPerson[i].nome}`
+        elementoLista.appendChild(nome)
+
+        secaoListPainting.appendChild(elementoLista)
+    }
 }
+createPaitingItem(listPainting)
